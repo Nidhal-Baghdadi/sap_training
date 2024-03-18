@@ -77,7 +77,7 @@ resources:
               - $XSAPPNAME.RiskViewer
         oauth2-configuration:
           redirect-uris:
-            - https://**.hana.ondemand.com/login/callback # Wildcard redirect to SAP BTP (You might want to make this more exclusive)
+            - https://a8944676trial-dev-risk-management.cfapps.us10-001.hana.ondemand.com/login/callback
   - name: risk-management-destination
     type: org.cloudfoundry.managed-service
     parameters:
