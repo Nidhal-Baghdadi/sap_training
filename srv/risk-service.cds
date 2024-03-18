@@ -3,7 +3,7 @@ using {riskmanagement as rm} from '../db/schema';
 
 @path: 'service/risk'
 service RiskService @(requires: 'authenticated-user') {
-    entity Risks @(restrict: [
+    entity Risks  @(restrict: [
         {
             grant: 'READ',
             to   : 'RiskViewer'
@@ -18,7 +18,7 @@ service RiskService @(requires: 'authenticated-user') {
             ], // Allowing CDS events by explicitly mentioning them
             to   : 'RiskManager'
         }
-    ])                      as projection on rm.Risks;
+    ])    as projection on rm.Risks;            
 
     annotate Risks with @odata.draft.enabled;
 
@@ -31,7 +31,8 @@ service RiskService @(requires: 'authenticated-user') {
             grant: '*', // Allow everything using wildcard
             to   : 'RiskManager'
         }
-    ])                      as projection on rm.Mitigations;
+    ]) as projection on rm.Mitigations;
+                
 
     annotate Mitigations with @odata.draft.enabled;
 
